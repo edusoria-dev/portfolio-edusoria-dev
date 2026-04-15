@@ -58,20 +58,31 @@ section {
 }
 
 h3 {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     letter-spacing: 4px;
+    font-size: 22px;
+    position: relative;
+}
+
+h3::after {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background: #f59c2a;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
 }
 
 /* ABOUT */
 .about {
     position: relative;
     height: 100vh;
-    overflow: hidden;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
-/* VIDEO */
 .about-video {
     position: absolute;
     width: 100%;
@@ -79,7 +90,6 @@ h3 {
     object-fit: cover;
 }
 
-/* OVERLAY */
 .about-overlay {
     position: absolute;
     width: 100%;
@@ -87,7 +97,6 @@ h3 {
     background: rgba(0,0,0,0.7);
 }
 
-/* CONTENIDO */
 .about-content {
     position: relative;
     z-index: 2;
@@ -99,16 +108,62 @@ h3 {
     flex: 1;
 }
 
-/* EXPERIENCIA */
+.exp {
+    border-right: 1px solid rgba(255,255,255,0.05);
+    padding-right: 40px;
+}
+
+.edu {
+    padding-left: 40px;
+}
+
+/* TIMELINE */
 .item {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    position: relative;
 }
 
 .date {
-    width: 140px;
+    width: 120px;
     color: #f59c2a;
     font-size: 12px;
+    margin-right: 40px;
+    text-align: right;
+}
+
+.item::before {
+    content: "";
+    position: absolute;
+    left: 140px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: rgba(255,255,255,0.08);
+}
+
+.item::after {
+    content: "";
+    position: absolute;
+    left: 136px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    background: #f59c2a;
+    border-radius: 50%;
+}
+
+.card {
+    background: rgba(255,255,255,0.03);
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    margin-left: 30px;
+}
+
+.card:hover {
+    background: rgba(245,156,42,0.12);
+    transform: translateX(10px);
 }
 
 /* SKILLS */
@@ -126,13 +181,105 @@ h3 {
     background: #f59c2a;
 }
 
-/* niveles */
 .w90 { width: 90%; }
 .w85 { width: 85%; }
 .w80 { width: 80%; }
 .w75 { width: 75%; }
 .w65 { width: 65%; }
 .w60 { width: 60%; }
+
+/* ===================== */
+/* 🔥 PROYECTOS PRO */
+/* ===================== */
+
+.projects {
+    background: #050505; /* MÁS OSCURO */
+    padding-bottom: 120px;
+}
+
+/* 👉 CENTRADO CUANDO HAY 1 */
+.projects-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* CARD */
+.project-card {
+    position: relative;
+    width: 320px;
+    height: 300px;
+    background: url("img/Gestor dinamico de eventos.png") center/cover no-repeat;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+/* OVERLAY */
+.project-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+/* CONTENIDO */
+.project-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
+
+/* TEXTO */
+.project-content p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* TECH */
+.tech span {
+    font-size: 11px;
+    background: rgba(245,156,42,0.2);
+    padding: 4px 8px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+/* BOTONES */
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.btn-primary {
+    background: #f59c2a;
+    color: black;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    border: 1px solid #f59c2a;
+    color: #f59c2a;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+/* HOVER */
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+/* OCULTOS */
+.hidden-project {
+    display: none;
+}
 
 /* CONTACTO */
 .contact {
@@ -141,5 +288,743 @@ h3 {
 
 .contact a {
     color: #f59c2a;
+}
+
+.skills-section {
+    background: #0a0a0a;
+}
+
+/* GRID */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* CAJAS */
+.skill-box {
+    background: rgba(255,255,255,0.03);
+    padding: 30px;
+    border-radius: 12px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* EFECTO HOVER */
+.skill-box:hover {
+    transform: translateY(-10px);
+    background: rgba(245,156,42,0.08);
+}
+
+/* BORDE LUMINOSO SUTIL */
+.skill-box::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background: #f59c2a;
+    opacity: 0.6;
+}
+
+/* TITULO */
+.skill-box h4 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/* LISTA */
+.skill-box ul {
+    list-style: none;
+}
+
+.skill-box li {
+    margin-bottom: 10px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+/* MICRO ANIMACIÓN */
+.skill-box li:hover {
+    transform: translateX(5px);
+    color: #f59c2a;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.skills-section {
+    background: #0a0a0a;
+}
+
+/* WRAPPER */
+.skills-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* BLOQUES */
+.skills-block {
+    background: rgba(255,255,255,0.02);
+    padding: 30px;
+    border-radius: 14px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* HOVER PRO */
+.skills-block:hover {
+    transform: translateY(-8px);
+    background: rgba(245,156,42,0.05);
+}
+
+/* LÍNEA SUPERIOR */
+.skills-block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #f59c2a;
+    opacity: 0.6;
+}
+
+/* TITULOS */
+.skills-block h4 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/* CHIPS */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chips span {
+    background: rgba(255,255,255,0.05);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+/* HOVER CHIP */
+.chips span:hover {
+    background: #f59c2a;
+    color: black;
+    transform: translateY(-3px);
+}
+
+/* SOFT SKILLS COLOR DIFERENTE */
+.chips.soft span {
+    background: rgba(245,156,42,0.1);
+}
+
+/* SOFTWARE BARS */
+.software-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.soft-skill p {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+/* BARRA */
+.bar {
+    height: 5px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f59c2a, #ffb347);
+    width: 0;
+    transition: 1.5s ease;
+}
+
+/* ACTIVAR ANIMACIÓN */
+.skills-section.active .fill {
+    width: auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .skills-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+.services {
+    background: linear-gradient(to bottom, #0f0f0f, #121212);
+    padding-top: 120px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* GRID */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* CARD */
+.service-card {
+    background: rgba(255,255,255,0.02);
+    padding: 30px;
+    border-radius: 14px;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* HOVER PRO */
+.service-card:hover {
+    transform: translateY(-10px);
+    background: rgba(245,156,42,0.06);
+}
+
+/* LUZ */
+.service-card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background: #f59c2a;
+    opacity: 0.7;
+}
+
+/* TITULO */
+.service-card h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* TEXTO */
+.service-card p {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* TAGS */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags span {
+    font-size: 12px;
+    padding: 6px 10px;
+    background: rgba(245,156,42,0.1);
+    border-radius: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.service-card {
+    background: rgba(255,255,255,0.02);
+    padding: 30px;
+    border-radius: 14px;
+    transition: 0.4s;
+    position: relative;
+}
+
+/* DIFERENCIA CLAVE */
+.service-card:hover {
+    transform: translateY(-8px);
+    background: rgba(245,156,42,0.08);
+}
+
+/* BORDE IZQUIERDO (MUY PRO) */
+.service-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 3px;
+    height: 40px;
+    background: #f59c2a;
+}
+
+.services h3 {
+    font-size: 26px;
+    letter-spacing: 3px;
+}
+
+.project-highlight {
+    background: #070707;
+}
+
+.project-flex {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+/* TEXTO */
+.project-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.project-text p {
+    max-width: 500px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+/* BOTONES */
+.project-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background: #f59c2a;
+    color: black;
+    padding: 12px 20px;
+    border-radius: 8px;
     text-decoration: none;
+}
+
+.btn-secondary {
+    border: 1px solid #f59c2a;
+    color: #f59c2a;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* IMAGEN */
+.project-image img {
+    width: 400px;
+    border-radius: 12px;
+}
+
+.cta {
+    text-align: center;
+    background: #080808;
+}
+
+.cta h2 {
+    margin-bottom: 20px;
+}
+
+.cta p {
+    margin-bottom: 30px;
+    opacity: 0.7;
+}
+
+.contact-pro {
+    background: linear-gradient(to top, #050505, #0a0a0a);
+    text-align: center;
+    padding: 120px 0;
+}
+
+/* TITULO */
+.contact-pro h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* SUBTEXTO */
+.contact-sub {
+    opacity: 0.7;
+    margin-bottom: 50px;
+}
+
+/* GRID */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+/* CARDS */
+.contact-card {
+    background: rgba(255,255,255,0.03);
+    padding: 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+/* HOVER */
+.contact-card:hover {
+    transform: translateY(-8px);
+    background: rgba(245,156,42,0.08);
+}
+
+/* TITULO CARD */
+.contact-card h4 {
+    margin-bottom: 10px;
+}
+
+/* TEXTO */
+.contact-card p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* CTA */
+.contact-cta {
+    margin-top: 20px;
+}
+
+/* BOTÓN (si no lo tienes ya) */
+.btn-primary {
+    background: #f59c2a;
+    color: black;
+    padding: 14px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.floating-contact {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    background: #f59c2a;
+    color: black;
+
+    padding: 14px 20px;
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+
+    transition: 0.3s;
+    z-index: 999;
+}
+
+/* HOVER */
+.floating-contact:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* EFECTO SUAVE */
+.floating-contact::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    background: #f59c2a;
+    opacity: 0.2;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.contact-location {
+    margin-top: 10px;
+    margin-bottom: 40px;
+
+    font-size: 14px;
+    opacity: 0.6;
+    letter-spacing: 0.5px;
+}
+
+.location-badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.05);
+    font-size: 13px;
+    opacity: 0.8;
+
+    margin-bottom: 40px;
+}
+
+.location-badge {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 30px;
+
+    background: rgba(245,156,42,0.15);
+    border: 1px solid rgba(245,156,42,0.4);
+
+    color: #f59c2a;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    margin-bottom: 40px;
+
+    backdrop-filter: blur(6px);
+
+    /* ANIMACIÓN */
+    animation: floatBadge 3s ease-in-out infinite;
+}
+
+/* ANIMACIÓN SUAVE (NO CANTOSA) */
+@keyframes floatBadge {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* HOVER MÁS PRO */
+.location-badge:hover {
+    background: rgba(245,156,42,0.25);
+    transform: translateY(-4px) scale(1.03);
+    transition: 0.3s;
+}
+.location-badge::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    background: #f59c2a;
+    opacity: 0.2;
+    filter: blur(12px);
+    z-index: -1;
+}
+
+.location-badge {
+    position: relative;
+}
+
+/* CERTIFICADOS */
+.certificados {
+    background: radial-gradient(circle at top, rgba(245,156,42,0.08), transparent 60%);
+}
+
+/* CARD */
+.cert-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+
+    padding: 25px;
+    border-radius: 16px;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: 0.4s;
+}
+
+/* ICONO */
+.cert-icon {
+    font-size: 28px;
+    background: rgba(245,156,42,0.15);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+/* TEXTO */
+.cert-content h4 {
+    margin-bottom: 5px;
+}
+
+.cert-content p {
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+/* BADGE DERECHA */
+.cert-badge {
+    margin-left: auto;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 20px;
+
+    background: rgba(245,156,42,0.2);
+    color: #f59c2a;
+}
+
+/* EFECTO HOVER */
+.cert-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    border: 1px solid rgba(245,156,42,0.4);
+    background: rgba(245,156,42,0.08);
+}
+
+/* GLOW EFECTO */
+.cert-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #f59c2a;
+    opacity: 0;
+    filter: blur(40px);
+    transition: 0.4s;
+    z-index: 0;
+}
+
+.cert-card:hover::after {
+    opacity: 0.15;
+}
+
+/* ASEGURAR CONTENIDO ENCIMA */
+.cert-card * {
+    position: relative;
+    z-index: 2;
+}
+
+/* CLIENTES - FONDO MEJORADO */
+.clients {
+    padding: 120px 0;
+    overflow: hidden;
+
+    /* BLANCO ROTO CON TOQUE NARANJA */
+    background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #fff8f1 40%,
+        #fff3e8 60%,
+        #ffffff 100%
+    );
+
+    position: relative;
+}
+
+/* GLOW SUAVE */
+.clients::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 200px;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(245,156,42,0.15),
+        transparent 70%
+    );
+
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    .clients {
+    color: #111; /* antes blanco */
+}
+}
+
+.clients h3 {
+    color: white;
+}
+
+.clients h3::after {
+    background: #f59c2a;
+}
+
+/* WRAPPER */
+.clients-wrapper {
+    overflow: hidden;
+}
+
+/* TRACK (animación infinita) */
+.clients-track {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+
+    width: max-content;
+
+    animation: scrollClients 25s linear infinite;
+}
+
+/* LOGOS */
+/* LOGOS EN COLOR ORIGINAL */
+/* LOGOS CLIENTES */
+.clients-track img {
+    height: 50px; /* antes 45px → más grandes */
+
+    opacity: 0.85;
+    filter: none;
+
+    /* 👇 elimina cualquier interacción */
+    pointer-events: none;
+
+    /* 👇 transición suave por si luego animas */
+    transition: none;
+}
+
+.clients-track img:nth-child(3) {
+    height: 35px;
+}
+
+/* HOVER SUAVE 
+.clients-track img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    background: rgba(255,255,255,0.03);
+}
+*/
+
+
+/* ANIMACIÓN */
+@keyframes scrollClients {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+
+/* FORZAR FONDO NEGRO CLIENTES */
+.clients {
+    background: #0f0f0f !important;
+    color: white;
+}
+
+/* ASEGURAR QUE NADA INTERNO LO PISE */
+.clients * {
+    background-color: transparent;
 }
