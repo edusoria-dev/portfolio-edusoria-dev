@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #0f0f0f;
+    color: white;
+}
+
+/* CONTENEDOR */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 40px;
+}
+
+.flex {
+    display: flex;
+    gap: 80px;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url("img/01_PORTADA.JPG") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 { font-size: 60px; }
+.hero h2 { margin-bottom: 20px; }
+
+.hero-links a {
+    margin-right: 20px;
+    color: #f59c2a;
+    text-decoration: none;
+}
+
+/* SECCIONES */
+section {
+    padding: 100px 0;
+}
+
+h3 {
+    margin-bottom: 30px;
+    letter-spacing: 4px;
+}
+
+/* ABOUT */
+.about {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* VIDEO */
+.about-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* OVERLAY */
+.about-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+
+/* CONTENIDO */
+.about-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+/* COLUMNAS */
+.col {
+    flex: 1;
+}
+
+/* EXPERIENCIA */
+.item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.date {
+    width: 140px;
+    color: #f59c2a;
+    font-size: 12px;
+}
+
+/* SKILLS */
+.skill {
+    margin-bottom: 20px;
+}
+
+.bar {
+    height: 6px;
+    background: #333;
+}
+
+.fill {
+    height: 100%;
+    background: #f59c2a;
+}
+
+/* niveles */
+.w90 { width: 90%; }
+.w85 { width: 85%; }
+.w80 { width: 80%; }
+.w75 { width: 75%; }
+.w65 { width: 65%; }
+.w60 { width: 60%; }
+
+/* CONTACTO */
+.contact {
+    text-align: center;
+}
+
+.contact a {
+    color: #f59c2a;
+    text-decoration: none;
+}
