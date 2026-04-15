@@ -1,3 +1,7 @@
+html {
+    font-size: clamp(14px, 1vw, 18px);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,9 +16,10 @@ body {
 
 /* CONTENEDOR */
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding: 0 40px;
+    padding: 0 clamp(16px, 4vw, 40px);
 }
 
 .flex {
@@ -24,7 +29,7 @@ body {
 
 /* HERO */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     background: url("img/01_PORTADA.JPG") center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -622,7 +627,8 @@ h3::after {
 
 /* IMAGEN */
 .project-image img {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     border-radius: 12px;
 }
 
@@ -1027,4 +1033,163 @@ h3::after {
 /* ASEGURAR QUE NADA INTERNO LO PISE */
 .clients * {
     background-color: transparent;
+}
+
+/* ============================= */
+/* 📱 MÓVIL (hasta 768px) */
+/* ============================= */
+@media (max-width: 768px) {
+
+    section {
+        padding: 70px 0;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero h2 {
+        font-size: 18px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    /* ABOUT */
+    .about {
+        height: auto;
+        padding: 100px 0;
+    }
+
+    .about-content {
+        max-width: 100%;
+    }
+
+    /* EXPERIENCE */
+    .flex {
+        flex-direction: column;
+        gap: clamp(20px, 5vw, 80px);
+    }
+
+    .exp {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .edu {
+        padding-left: 0;
+    }
+
+    .item {
+        flex-direction: column;
+    }
+
+    .date {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .item::before,
+    .item::after {
+        display: none;
+    }
+
+    .card {
+        margin-left: 0;
+    }
+
+    /* PROYECTO DESTACADO */
+    .project-flex {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .project-image img {
+        width: 100%;
+    }
+
+    /* SERVICES */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* BOTÓN FLOTANTE */
+    .floating-contact {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 16px;
+        font-size: 12px;
+    }
+}
+
+
+/* ============================= */
+/* 📲 TABLET (769px - 1024px) */
+/* ============================= */
+@media (max-width: 1024px) {
+
+    .project-flex {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ============================= */
+/* 🖥️ PANTALLAS GRANDES */
+/* ============================= */
+@media (min-width: 1600px) {
+
+    .container {
+        max-width: 1400px;
+    }
+
+    .hero h1 {
+        font-size: 80px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .project-text h2 {
+        font-size: 48px;
+    }
+}
+
+
+/* ============================= */
+/* 📺 TV / ULTRA WIDE */
+/* ============================= */
+@media (min-width: 2000px) {
+
+    html {
+        font-size: 20px;
+    }
+
+    .container {
+        max-width: 1600px;
+    }
+
+    section {
+        padding: 140px 0;
+    }
 }
