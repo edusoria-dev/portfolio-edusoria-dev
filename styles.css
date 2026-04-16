@@ -406,6 +406,29 @@ p {
     width: 100%;
     max-width: 400px;
     border-radius: 12px;
+
+}
+
+.project-title {
+    position: relative;
+    margin-bottom: 20px; /* menos separación */
+    padding-left: 60px; /* espacio para la línea */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.project-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 40px;
+    height: 2px;
+    background: #f59c2a;
+    
 }
 
 /* ========================
@@ -1136,7 +1159,7 @@ p {
 
         display: grid !important;
         grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
+        gap: 20px;
         justify-items: center;
     }
 
@@ -1151,6 +1174,14 @@ p {
 
     .clients-track img:nth-child(n+12) {
         display: none;
+    }
+
+    .clients-track .duplicate {
+        display: none !important;
+    }
+
+    .clients-track a {
+        pointer-events: none; /* evita links en PDF */
     }
 }
 
