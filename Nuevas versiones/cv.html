@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Eduardo Soria | CV</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* 👇 MODO CV (sobrescribe tu CSS) */
+
+body {
+    background: white !important;
+    color: black !important;
+}
+
+/* QUITAMOS TODO LO VISUAL */
+.hero,
+.about-video,
+.clients,
+.cta,
+.floating-contact,
+.project-highlight {
+    display: none !important;
+}
+
+/* AJUSTES GENERALES */
+section {
+    padding: 40px 0 !important;
+}
+
+h3 {
+    color: black;
+}
+
+h3::after {
+    background: black;
+}
+
+/* TIMELINE LIMPIO */
+.timeline::before,
+.timeline-dot {
+    display: none !important;
+}
+
+.timeline-content {
+    padding-left: 0 !important;
+}
+
+/* CARDS MÁS PLANAS */
+.card,
+.card.pro {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* TEXTOS */
+.timeline-content p {
+    max-width: 100%;
+}
+
+/* CABECERA CV */
+.cv-header {
+    margin-bottom: 40px;
+}
+
+.cv-header h1 {
+    font-size: 28px;
+}
+
+.cv-header h2 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.cv-header p {
+    font-size: 13px;
+    max-width: 500px;
+}
+
+/* BOTÓN OCULTO EN PRINT */
+.no-print {
+    margin-top: 20px;
+}
+
+@media print {
+    .no-print {
+        display: none;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- CABECERA -->
+    <div class="cv-header">
+        <h1>Eduardo Soria Galán</h1>
+        <h2>Desarrollador Web Junior</h2>
+
+        <p>
+            Perfil creativo con experiencia en proyectos reales y clientes.
+            En transición al desarrollo web combinando enfoque técnico y ejecución.
+        </p>
+    </div>
+
+    <!-- EXPERIENCIA -->
+    <section>
+        <h3>Experiencia</h3>
+
+        <div class="timeline timeline-exp">
+            <!-- JS INSERTA CONTENIDO -->
+        </div>
+    </section>
+
+    <!-- EDUCACIÓN -->
+    <section>
+        <h3>Educación</h3>
+
+        <div class="timeline timeline-edu">
+            <!-- JS INSERTA CONTENIDO -->
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+        <h3>Skills</h3>
+
+        <p>
+            HTML, CSS, JavaScript, Python, Java, MySQL · Premiere, After Effects, Photoshop, Lightroom · Gestión de proyectos y clientes
+        </p>
+    </section>
+
+    <!-- BOTÓN DESCARGA -->
+    <div class="no-print">
+        <button onclick="window.print()" class="btn-primary">
+            Descargar CV en PDF
+        </button>
+    </div>
+
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

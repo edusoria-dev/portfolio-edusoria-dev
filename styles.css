@@ -30,10 +30,16 @@ body {
 /* HERO */
 .hero {
     min-height: 100vh;
-    background: url("img/01_PORTADA.JPG") center/cover no-repeat;
+    background: url("img/01_PORTADA_v3.JPG") center/cover no-repeat;
     display: flex;
     align-items: center;
     position: relative;
+    transition: transform 6s ease;
+}
+
+.hero:hover {
+    transform: scale(1.02);
+    text-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
 .overlay {
@@ -48,13 +54,52 @@ body {
     z-index: 2;
 }
 
-.hero h1 { font-size: 60px; }
+.hero h1 { 
+    font-size: 60px;
+    transition: 0.3s;
+
+}
 .hero h2 { margin-bottom: 20px; }
 
+
+
+.hero-links {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+}
+
 .hero-links a {
-    margin-right: 20px;
     color: #f59c2a;
     text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    transition: 0.3s;
+}
+
+.hero-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #f59c2a;
+    transition: 0.3s;
+}
+
+.hero-links a:hover::after {
+    width: 100%;
+}
+
+.hero-links a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    background: #f59c2a;
+    color: black;
 }
 
 /* SECCIONES */
@@ -702,7 +747,15 @@ h3::after {
 
 /* CTA */
 .contact-cta {
-    margin-top: 20px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-cta .btn-primary {
+    padding: 16px 32px;
+    font-size: 15px;
 }
 
 /* BOTÓN (si no lo tienes ya) */
@@ -1448,4 +1501,166 @@ h3::after {
     font-size: 8px;
     position: relative;
     top: -1px;
+}
+
+
+
+h1, h2, h3, h4 {
+    page-break-after: avoid;
+}
+
+p {
+    page-break-inside: avoid;
+}
+
+@page {
+    size: A4 landscape;
+    margin: 15mm;
+}
+
+
+@media print {
+
+    .flex,
+    .project-flex {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+
+    .services-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    html, body {
+        width: 1920px;
+    }
+
+    .container {
+        max-width: 1200px !important;
+    }
+    
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+
+}
+
+.map-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+    .map-grid {
+    margin-bottom: 60px;
+}
+}
+
+.map-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(245,156,42,0.25);
+
+    padding: 20px;
+    border-radius: 16px;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: 0.4s;
+}
+
+.map-card * {
+    position: relative;
+    z-index: 2;
+}
+
+.map-card iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+    border-radius: 10px;
+    filter: brightness(0.85) contrast(0.95);
+    transition: 0.4s;
+}
+
+.map-card h4 {
+    margin-bottom: 15px;
+    padding-left: 4px;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    
+}
+
+/* HOVER PRO */
+.map-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    border: 1px solid rgba(245,156,42,0.5);
+    background: rgba(245,156,42,0.08);
+}
+
+.map-card:hover iframe {
+    filter: brightness(1);
+}
+
+.map-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: #f59c2a;
+    opacity: 0;
+
+    filter: blur(40px);
+    transition: 0.4s;
+
+    z-index: 0;
+}
+
+.map-card:hover::after {
+    opacity: 0.15;
+}
+
+@media (max-width: 900px) {
+    .map-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.map-link {
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s;
+}
+
+.map-link iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+    pointer-events: none; /* 🔥 clave */
+}
+
+.map-link:hover {
+    transform: scale(1.02);
+}
+
+.map-link::after {
+    content: "Abrir mapa";
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 11px;
+    padding: 5% 10px;
+    border-radius: 20px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.map-link:hover::after {
+    opacity: 1;
 }

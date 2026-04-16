@@ -23,3 +23,21 @@ const observer = new IntersectionObserver((entries) => {
 items.forEach(item => {
     observer.observe(item);
 });
+
+const expContainer = document.querySelector(".timeline-exp");
+
+experiencia.forEach(item => {
+    expContainer.innerHTML += `
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+                <span class="date">${item.fecha}</span>
+                <h4>${item.empresa}</h4>
+                <span class="role">${item.rol}</span>
+                <p>${item.descripcion}</p>
+            </div>
+        </div>
+    `;
+});
+
