@@ -1,43 +1,27 @@
+// ANIMACIÓN BARRAS DE SKILLS
+// Solo activa si la sección .skills-section existe en el HTML
 const skillsSection = document.querySelector('.skills-section');
 
-window.addEventListener('scroll', () => {
-    const sectionTop = skillsSection.getBoundingClientRect().top;
-
-    if (sectionTop < window.innerHeight - 100) {
-        skillsSection.classList.add('active');
-    }
-});
-
-const items = document.querySelectorAll('.timeline-item');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+if (skillsSection) {
+    window.addEventListener('scroll', () => {
+        const sectionTop = skillsSection.getBoundingClientRect().top;
+        if (sectionTop < window.innerHeight - 100) {
+            skillsSection.classList.add('active');
         }
     });
-}, {
-    threshold: 0.2
-});
+}
 
-items.forEach(item => {
-    observer.observe(item);
-});
+// ANIMACIÓN TIMELINE (fade-in al hacer scroll)
+const timelineItems = document.querySelectorAll('.timeline-item');
 
-const expContainer = document.querySelector(".timeline-exp");
+if (timelineItems.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
 
-experiencia.forEach(item => {
-    expContainer.innerHTML += `
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-content">
-                <span class="date">${item.fecha}</span>
-                <h4>${item.empresa}</h4>
-                <span class="role">${item.rol}</span>
-                <p>${item.descripcion}</p>
-            </div>
-        </div>
-    `;
-});
-
+    timelineItems.forEach(item => observer.observe(item));
+}
