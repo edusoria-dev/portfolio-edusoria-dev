@@ -2,7 +2,7 @@
    BASE
    ======================== */
 html {
-    font-size: clamp(14px, 1vw, 18px);
+    font-size: 16px;
 }
 
 * {
@@ -23,7 +23,7 @@ body {
    ======================== */
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
     padding: 0 clamp(16px, 4vw, 40px);
 }
@@ -311,66 +311,6 @@ p {
     opacity: 1;
 }
 
-/* ========================
-   PROYECTOS
-   ======================== */
-.projects {
-    background: #050505;
-    padding-bottom: 120px;
-}
-
-.projects-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.project-card {
-    position: relative;
-    width: 320px;
-    height: 300px;
-    background: url("img/Gestor dinamico de eventos.png") center/cover no-repeat;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: 0.4s;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-}
-
-.project-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-}
-
-.project-content {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-}
-
-.project-content p {
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-.tech span {
-    font-size: 11px;
-    background: rgba(245, 156, 42, 0.2);
-    padding: 4px 8px;
-    margin-right: 5px;
-    border-radius: 5px;
-}
-
-.project-links {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-}
 
 /* PROYECTO DESTACADO */
 .project-highlight {
@@ -1290,96 +1230,6 @@ p {
     }
 }
 
-.projects {
-    background: #050505;
-    padding: 120px 0;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-.project-card {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 14px;
-    overflow: hidden;
-    transition: 0.4s;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-}
-
-.project-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.project-info {
-    padding: 20px;
-}
-
-.project-info h4 {
-    margin-bottom: 10px;
-}
-
-.project-info p {
-    font-size: 14px;
-    opacity: 0.7;
-    margin-bottom: 15px;
-}
-
-.projects-highlight-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-}
-
-.projects-slider {
-    overflow: hidden;
-    margin-top: 60px;
-}
-
-.projects-track {
-    display: flex;
-    gap: 40px;
-    width: max-content;
-    animation: scrollProjects 25s linear infinite;
-}
-
-.project-card {
-    min-width: 280px;
-    max-width: 280px;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 20px;
-    border-radius: 14px;
-    transition: 0.4s;
-}
-
-.project-card img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.project-card h4 {
-    margin-bottom: 5px;
-}
-
-.project-card p {
-    font-size: 13px;
-    opacity: 0.7;
-    margin-bottom: 15px;
-}
-
-.project-card:hover {
-    transform: translateY(-10px) scale(1.03);
-}
 
 @keyframes scrollProjects {
     from {
@@ -1395,176 +1245,105 @@ p {
     animation-play-state: paused;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin-top: 60px;
-}
 
-/* TARJETA */
-.project-card {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: 0.4s;
-    cursor: pointer;
-}
-
-/* IMAGEN CONTENIDA */
-.project-img {
-    height: 180px;
-    background: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.project-img img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    /* 🔥 CLAVE */
-}
-
-/* TEXTO */
-.project-info {
-    padding: 20px;
-}
-
-.project-info h4 {
-    margin-bottom: 5px;
-}
-
-.project-info p {
-    font-size: 13px;
-    opacity: 0.7;
-    margin-bottom: 15px;
-}
-
-/* LINKS */
-.project-links {
-    display: flex;
-    gap: 15px;
-}
-
-.project-links a {
-    font-size: 13px;
-    color: #f59c2a;
-    text-decoration: none;
-}
-
-/* 🔥 HOVER PRO */
-.project-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    background: rgba(245, 156, 42, 0.08);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-}
-
-/* efecto imagen */
-.project-card:hover img {
-    transform: scale(1.05);
-    transition: 0.4s;
-}
-
-@media (max-width: 1024px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
+/* ========================
+   PROYECTOS FINAL PRO
+   ======================== */
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* 🔥 2 y 2 */
-    gap: 40px;
+    gap: 50px;
     margin-top: 60px;
 }
 
+/* TARJETA HORIZONTAL */
 .project-card {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* 🔥 empuja botones abajo */
+    align-items: center;
+    gap: 25px;
 
     background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
     border-radius: 16px;
-    overflow: hidden;
-    transition: 0.4s;
-    min-height: 380px;
-    /* 🔥 MISMA ALTURA */
+
+    transition: 0.3s;
 }
 
+/* HOVER */
+.project-card:hover {
+    transform: translateY(-8px);
+    background: rgba(245, 156, 42, 0.08);
+}
+
+/* IMAGEN */
 .project-img {
-    height: 180px;
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     background: #111;
-    padding: 20px;
+    border-radius: 12px;
 }
 
 .project-img img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 90%;
+    max-height: 90%;
     object-fit: contain;
 }
 
+/* TEXTO */
 .project-info {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    /* 🔥 ocupa todo */
-    padding: 20px;
 }
 
+/* BOTONES */
 .project-links {
-    margin-top: auto;
-    /* 🔥 EMPUJA ABAJO */
     display: flex;
-    gap: 15px;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .project-links a {
     font-size: 13px;
-    text-decoration: none;
     padding: 8px 14px;
     border-radius: 6px;
+    text-decoration: none;
     transition: 0.3s;
 }
 
-/* botón principal */
+/* BOTÓN VER */
 .project-links a:first-child {
     background: #f59c2a;
     color: black;
 }
 
-/* botón secundario */
+/* BOTÓN CÓDIGO */
 .project-links a:last-child {
     border: 1px solid #f59c2a;
     color: #f59c2a;
 }
 
-/* hover */
+/* HOVER BOTONES */
 .project-links a:hover {
     transform: translateY(-2px);
 }
 
-.project-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    background: rgba(245, 156, 42, 0.08);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-}
-
+/* RESPONSIVE */
 @media (max-width: 768px) {
+
     .projects-grid {
         grid-template-columns: 1fr;
     }
+
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
 }
